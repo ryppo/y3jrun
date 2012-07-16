@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="contactTestReport" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="ID" class="java.lang.String"/>
+	<field name="TITLE" class="java.lang.String"/>
+	<field name="TOSTRING" class="java.lang.String"/>
+	<field name="CREATIONDATE" class="java.lang.String"/>
+	<field name="CREATOR" class="java.lang.String"/>
+	<field name="MESSAGE" class="java.lang.String"/>
+	<field name="NOTIFICATIONTYPE" class="java.lang.String"/>
+	<field name="CHANGEDATE" class="java.lang.String"/>
+	<field name="CHANGER" class="java.lang.String"/>
+	<field name="RELATEDOBJECTID" class="java.lang.String"/>
+	<field name="RELATEDOBJECTTYPE" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="52" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="555" height="39"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TITLE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="5" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="66" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="83" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="83" y="1" width="170" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TOSTRING}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="20" width="100" height="20"/>
+				<textElement>
+					<font isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Nachricht]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="40" width="100" height="20"/>
+				<textElement>
+					<font isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Betroffen]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="21" width="455" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{MESSAGE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="41" width="48" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{RELATEDOBJECTID}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="269" y="40" width="56" height="20"/>
+				<textElement>
+					<font isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Erstellt]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="325" y="41" width="100" height="20"/>
+				<textElement>
+					<font isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CREATIONDATE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="425" y="41" width="100" height="20"/>
+				<textElement>
+					<font isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CREATOR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="153" y="41" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{RELATEDOBJECTTYPE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="269" y="1" width="256" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOTIFICATIONTYPE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="9" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="8" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="10" splitType="Stretch"/>
+	</summary>
+</jasperReport>

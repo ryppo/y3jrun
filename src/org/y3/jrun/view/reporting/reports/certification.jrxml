@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="certification" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="774"/>
+	<field name="FULLNAME" class="java.lang.String"/>
+	<field name="TITLE" class="java.lang.String"/>
+	<field name="DISTANCE" class="java.lang.String"/>
+	<field name="RESULTTIME" class="java.lang.String"/>
+	<field name="AGECLASS" class="java.lang.Object"/>
+	<field name="RANK" class="java.lang.String"/>
+	<field name="ENDOFCOMPETITION" class="java.lang.String"/>
+	<background>
+		<band height="500">
+			<image hAlign="Left" vAlign="Middle">
+				<reportElement isPrintRepeatedValues="false" x="0" y="70" width="1000" height="400"/>
+				<imageExpression><![CDATA["./laeufer.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="42" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="744" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="555" height="67"/>
+				<textElement textAlignment="Center">
+					<font fontName="Helvetica" size="64" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["U R K U N D E"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="108" width="555" height="55"/>
+				<textElement textAlignment="Center">
+					<font fontName="Helvetica" size="48"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FULLNAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="175" width="555" height="29"/>
+				<textElement textAlignment="Center">
+					<font fontName="Helvetica" size="24"/>
+				</textElement>
+				<textFieldExpression><![CDATA["hat beim "+$F{TITLE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="216" width="555" height="48"/>
+				<textElement textAlignment="Center">
+					<font fontName="Helvetica" size="36"/>
+				</textElement>
+				<textFieldExpression><![CDATA["\"Rund um die Bärenköpfe\""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="276" width="555" height="29"/>
+				<textElement textAlignment="Center">
+					<font fontName="Helvetica" size="24"/>
+				</textElement>
+				<textFieldExpression><![CDATA["erfolgreich teilgenommen."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="318" width="555" height="29"/>
+				<textElement textAlignment="Center">
+					<font fontName="Helvetica" size="24"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FULLNAME}+" absolvierte"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="347" width="555" height="29"/>
+				<textElement textAlignment="Center">
+					<font fontName="Helvetica" size="24"/>
+				</textElement>
+				<textFieldExpression><![CDATA["die Distanz von "+$F{DISTANCE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="376" width="555" height="29"/>
+				<textElement textAlignment="Center">
+					<font fontName="Helvetica" size="24"/>
+				</textElement>
+				<textFieldExpression><![CDATA["innerhalb von"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="405" width="555" height="40"/>
+				<textElement textAlignment="Center">
+					<font fontName="Helvetica" size="36"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RESULTTIME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="445" width="555" height="29"/>
+				<textElement textAlignment="Center">
+					<font fontName="Helvetica" size="24"/>
+				</textElement>
+				<textFieldExpression><![CDATA["und erreichte damit"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="474" width="555" height="29"/>
+				<textElement textAlignment="Center">
+					<font fontName="Helvetica" size="24"/>
+				</textElement>
+				<textFieldExpression><![CDATA["in der Altersklasse "+$F{AGECLASS}+" den"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="521" width="555" height="40"/>
+				<textElement textAlignment="Center">
+					<font fontName="Helvetica" size="36"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RANK}+". Platz."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="666" width="285" height="31"/>
+				<textElement>
+					<font fontName="Arial Hebrew" size="24"/>
+				</textElement>
+				<textFieldExpression><![CDATA["TSV Liebenburg"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="697" width="334" height="31"/>
+				<textElement>
+					<font fontName="Arial Hebrew" size="24"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ENDOFCOMPETITION}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="441" y="630" width="114" height="114"/>
+				<imageExpression><![CDATA["./TSV_Logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
