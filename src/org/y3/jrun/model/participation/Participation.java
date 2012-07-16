@@ -23,6 +23,7 @@ public class Participation extends Model {
 	private String comment;
 	private int donationHospizInEuroCent;
 	private boolean registeredOnline;
+	private boolean notCompeted = false;
 
 	/**
 	 * @return the competitionId
@@ -309,6 +310,36 @@ public class Participation extends Model {
 			this.registeredOnline = false;
 		} else if (registeredOnline == 1) {
 			this.registeredOnline = true;
+		}
+	}
+
+	/**
+	 * @return the notCompeted
+	 */
+	public boolean isNotCompeted() {
+		return notCompeted;
+	}
+
+	/**
+	 * @param notCompeted the notCompeted to set
+	 */
+	public void setNotCompeted(boolean notCompeted) {
+		this.notCompeted = notCompeted;
+	}
+	
+	public int isNotCompetedAsInt() {
+		if (notCompeted) {
+			return 1;
+		} else {
+			return 0;
+		}
+	}
+	
+	public void setNotCompeted(int notCompeted) {
+		if (notCompeted == 0) {
+			this.notCompeted = false;
+		} else if (notCompeted == 1) {
+			this.notCompeted = true;
 		}
 	}
 

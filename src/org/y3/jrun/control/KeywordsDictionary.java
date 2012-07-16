@@ -162,6 +162,7 @@ public class KeywordsDictionary {
 	public static final String PARTICIPATION_COMMENT					= "PARTICIPATION_COMMENT";
 	public static final String PARTICIPATION_DONATION_HOSPIZ			= "PARTICIPATION_DONATION_HOSPIZ";
 	public static final String PARTICIPATION_REGISTERED_ONLINE			= "PARTICIPATION_REGISTERED_ONLINE";
+	public static final String PARTICIPATION_NOT_COMPETED			= "NOT_COMPETED";
 	
 	//MODEL_DISCIPLINE
 	public static final String DISCIPLINE							= "DISCIPLINE";

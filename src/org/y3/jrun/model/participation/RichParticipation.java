@@ -54,6 +54,7 @@ public class RichParticipation extends Participation {
 			setComment(participation.getComment());
 			setDonationHospizInEuroCent(participation.getDonationHospizInEuroCent());
 			setRegisteredOnline(participation.isRegisteredOnline());
+			setNotCompeted(participation.isNotCompeted());
 		} else {
 			setId(0);
 			setChangeDate(null);
@@ -76,6 +77,7 @@ public class RichParticipation extends Participation {
 			setComment(null);
 			setDonationHospizInEuroCent(0);
 			setRegisteredOnline(false);
+			setNotCompeted(false);
 		}
 	}
 

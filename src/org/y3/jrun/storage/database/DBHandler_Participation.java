@@ -31,6 +31,7 @@ public class DBHandler_Participation extends DBModelHandler {
 				+ KeywordsDictionary.PARTICIPATION_COMMENT + KeywordsDictionary.SQL_VARCHAR_500 + ","
 				+ KeywordsDictionary.PARTICIPATION_DONATION_HOSPIZ + KeywordsDictionary.SQL_INTEGER + ","
 				+ KeywordsDictionary.PARTICIPATION_REGISTERED_ONLINE + KeywordsDictionary.SQL_SMALLINT + ","
+				+ KeywordsDictionary.PARTICIPATION_NOT_COMPETED + KeywordsDictionary.SQL_SMALLINT + ","
 				+ KeywordsDictionary.MODEL_META_ATTRIBUTES_DEFINITION 
 				+ ")";
 	}
@@ -66,6 +67,7 @@ public class DBHandler_Participation extends DBModelHandler {
 				+ KeywordsDictionary.PARTICIPATION_COMMENT + ", "
 				+ KeywordsDictionary.PARTICIPATION_DONATION_HOSPIZ + ", "
 				+ KeywordsDictionary.PARTICIPATION_REGISTERED_ONLINE + ", "
+				+ KeywordsDictionary.PARTICIPATION_NOT_COMPETED + ", "
 				+ KeywordsDictionary.MODEL_META_ATTRIBUTES
 				+ KeywordsDictionary.SQL_VALUES + "'" 
 				+ participation.getResultTimeAsString() + "', '"
@@ -82,7 +84,8 @@ public class DBHandler_Participation extends DBModelHandler {
 				+ Integer.toString(participation.getGenderAgeClassRank()) + ", '"
 				+ participation.getComment() + "', "
 				+ participation.getDonationHospizInEuroCent() + ", "
-				+ participation.isRegisteredOnlineAsInt() + ", '"
+				+ participation.isRegisteredOnlineAsInt() + ", "
+				+ participation.isNotCompeted() + ", '"
 				+ KeywordsDictionary.getMODEL_META_ATTRIBUTE_VALUES(model)
 				+ ")";
 	}
@@ -110,6 +113,7 @@ public class DBHandler_Participation extends DBModelHandler {
 				+ KeywordsDictionary.PARTICIPATION_COMMENT						+ "='" + participation.getComment() + "', "
 				+ KeywordsDictionary.PARTICIPATION_DONATION_HOSPIZ			+ "=" + participation.getDonationHospizInEuroCent() + ", "
 				+ KeywordsDictionary.PARTICIPATION_REGISTERED_ONLINE		+ "=" + participation.isRegisteredOnlineAsInt() + ", "
+				+ KeywordsDictionary.PARTICIPATION_NOT_COMPETED				+ "=" + participation.isNotCompetedAsInt() + ", "
 				+ KeywordsDictionary.getMODEL_META_ATTRIBUTES_FILLED(model)
 				+ KeywordsDictionary.SQL_WHERE_ID_IS + participation.getId();
 	}
@@ -141,6 +145,7 @@ public class DBHandler_Participation extends DBModelHandler {
 				+ KeywordsDictionary.PARTICIPATION_COMMENT + ", "
 				+ KeywordsDictionary.PARTICIPATION_DONATION_HOSPIZ + ", "
 				+ KeywordsDictionary.PARTICIPATION_REGISTERED_ONLINE + ", "
+				+ KeywordsDictionary.PARTICIPATION_NOT_COMPETED + ", "
 				+ KeywordsDictionary.MODEL_META_ATTRIBUTES
 				+ KeywordsDictionary.SQL_FROM
 				+ KeywordsDictionary.DATABASE_SCHEME + "." + KeywordsDictionary.PARTICIPATION;
@@ -279,7 +284,8 @@ public class DBHandler_Participation extends DBModelHandler {
 				p.setComment(resultSet.getString(14));
 				p.setDonationHospizInEuroCent(resultSet.getInt(15));
 				p.setRegisteredOnline(resultSet.getInt(16));
-				KeywordsDictionary.setMODEL_META_ATTRIBUTES(p, resultSet, 17);
+				p.setNotCompeted(resultSet.getInt(17));
+				KeywordsDictionary.setMODEL_META_ATTRIBUTES(p, resultSet, 18);
 				participations[participationCount] = p;
 				participationCount++;
 			}
